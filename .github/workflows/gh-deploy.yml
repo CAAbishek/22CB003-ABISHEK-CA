@@ -1,1 +1,19 @@
-
+name : deploy react app
+on : push
+jobs : 
+    deploy-react-app :
+        runs-on: ubuntu-latest
+        steps:
+        - name : clone the repostitory
+          uses : actions/checkout@v4
+          
+        - name : Installing NPM Packages
+          run :  npm install
+          
+        - name : Npm start 
+          run : npm run build
+          
+        - name : npm run test
+          run : npm run test
+        
+        
